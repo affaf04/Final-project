@@ -15,10 +15,10 @@ function Header ({user ,setUser}) {
     <>
       <nav className='header'>
 
-      <div style={{justifyContent:'space-around'}}>
-        <p style={{margin:'1em'}}>Welcome {user.name}, </p><hr/>
-        <p style={{margin:'1em'}}> Logged In : {user.email}</p>
-        <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
+      <div style={{justifyContent:'space-between'}}>
+        <p style={{}}>Welcome {user.name}, </p><hr/>
+        <p style={{}}> Logged In : {user.email}</p>
+        <Link to="" onClick={handleLogOut}><button className='button'>Log-Out</button></Link>
       </div>
        <div  className='navlinks'>
         <Link to="/orders">Order History</Link>
