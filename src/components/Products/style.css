@@ -1,112 +1,115 @@
 .CategoryList {
-    color: var(--text-light);
-    list-style: none;
-    padding: 0;
-    font-size: 1.7vw;
-    }
-    
-    .CategoryList li {
-    padding: .6vmin;
-    text-align: center;
-    border-radius: .5vmin;
-    margin-bottom: .5vmin;
-    }
-    
-    .CategoryList li:hover:not(.active) {
-    cursor: pointer;
-    background-color: var(--blue);
-    color: var(--white);
-    }
-    
-    .CategoryList li.active {
-    color: var(--text-dark);
-    background-color: var(--tan-1);
-    border: .1vmin solid var(--tan-3);
-    }
+  color: var(--text-light);
+  list-style: none;
+  padding: 0;
+  font-size: 1.7vw;
+}
 
-    /* ---------- */
+.CategoryList li {
+  padding: 0.6vmin;
+  text-align: center;
+  border-radius: 0.5vmin;
+  margin-bottom: 0.5vmin;
+}
 
-    .LineItem {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
-        padding: 1vmin 0;
-        color: var(--text-light);
-        background-color: var(--white);
-        border-top: .1vmin solid var(--tan-3);
-        font-size: 1.5vw;
-        }
-        
-        .LineItem:last-child {
-        border-bottom: .1vmin solid var(--tan-3);
-        }
-        
-        .LineItem .qty {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.3vw;
-        }
-        
-        .LineItem .extPrice {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        font-size: 1.3vw;
-        }
-        
-        .LineItem button {
-        margin: 0;
-        }
-        /* ------------------------- */
+.CategoryList li:hover:not(.active) {
+  cursor: pointer;
+  background-color: var(--blue);
+  color: var(--white);
+}
 
-        .MenuList {
-            background-color: var(--tan-1);
-            border: .1vmin solid red;
-            border-radius: 2vmin;
-            margin: 3vmin 0;
-            padding: 3vmin;
-            overflow-y: scroll;
-            }
+.CategoryList li.active {
+  color: var(--text-dark);
+  background-color: var(--tan-1);
+  border: 0.1vmin solid var(--tan-3);
+}
 
-            /* ------------------- */
+/* ---------- */
 
-            .MenuListItem {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 3vmin;
-                padding: 2vmin;
-                color: var(--text-light);
-                background-color: white;
-                border: .1vmin solid var(--tan-3);
-                border-radius: 1vmin;
-                font-size: 4vmin;
-              }
-              
-              .MenuListItem .emoji {
-                height: 8vw;
-                width: 8vw;
-                font-size: 4vw;
-                background-color: var(--tan-1);
-                border: .1vmin solid var(--tan-3);
-                border-radius: 1vmin;
-              }
-              
-              .MenuListItem .buy {
-                display: flex;
-                flex-direction: column;
-              }
-              
-              .MenuListItem .buy span {
-                font-size: 1.7vw;
-                text-align: center;
-                color: var(--text-light);
-              }
-              
-              .MenuListItem .name {
-                font-size: 2vw;
-                text-align: center;
-                color: var(--text-light);
-              }
+.LineItem {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
+  padding: 1vmin 0;
+  color: var(--text-light);
+  background-color: var(--white);
+  border-top: 0.1vmin solid var(--tan-3);
+  font-size: 1.5vw;
+}
+
+.LineItem:last-child {
+  border-bottom: 0.1vmin solid var(--tan-3);
+}
+
+.LineItem .qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3vw;
+}
+
+.LineItem .extPrice {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.3vw;
+}
+
+.LineItem button {
+  margin: 0;
+}
+/* ------------------------- */
+
+.MenuList {
+  background-color: var(--tan-1);
+  border: 0.1vmin solid red;
+  border-radius: 2vmin;
+  margin: 3vmin 0;
+  padding: 3vmin;
+  overflow-y: scroll;
+}
+
+/* ------------------- */
+
+.MenuListItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vmin;
+  padding: 2vmin;
+  color: var(--text-light);
+  background-color: white;
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  font-size: 4vmin;
+}
+
+.MenuListItem .img {
+  height: 15vw;
+  width: 15vw;
+  font-size: 4vw;
+  background-color: var(--tan-1);
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+ align-items: center;
+
+}
+
+.MenuListItem .buy {
+  display: flex;
+  flex-direction: column;
+}
+
+.MenuListItem .buy span {
+  font-size: 1.7vw;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.MenuListItem .name {
+  font-size: 2vw;
+  text-align: center;
+  color: var(--text-light);
+}

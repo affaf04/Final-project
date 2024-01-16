@@ -1,8 +1,8 @@
-import styles from './orderstyles.css';
+import  './orderstyles.css';
 
 export default function OrderListItem({ order, isSelected, handleSelectOrder }) {
 return (
-  <div className={`${styles.OrderListItem} ${isSelected ? styles.selected : ''}`} onClick={() => handleSelectOrder(order)}>
+  <div className='OrderListItem' onClick={() => handleSelectOrder(order)}>
     <div>
       <div>Order Id: <span className="smaller">{order.orderId}</span></div>
       <div className="smaller">{new Date(order.updatedAt).toLocaleDateString()}</div>

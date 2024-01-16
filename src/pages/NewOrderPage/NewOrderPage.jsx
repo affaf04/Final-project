@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/order-api';
-import styles from './style.css';
+import './style.css';
 import { Link, useNavigate } from 'react-router-dom';
 import ProductsList from '../../components/Products/ProductsList';
 import CategoryList from '../../components/Products/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import OrderDetail from '../../components/Order/OrderDetail';
+import LogOut from '../../components/LogOut/LogOut';
 import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
+// import Footer from '../../components/Footer/Footer'
 
 export default function NewOrderPage({ user, setUser }) {
   const [menuItems, setMenuItems] = useState([]);
@@ -55,8 +55,8 @@ export default function NewOrderPage({ user, setUser }) {
   }
 
   return (
-    <main className={styles.NewOrderPage}>
-      <Header />
+    <main className='NewOrderPage'>
+    <Header user={user} setUser={setUser} />
       <aside>
         {/* <Logo /> */}
         <CategoryList
@@ -65,9 +65,9 @@ export default function NewOrderPage({ user, setUser }) {
           setActiveCat={setActiveCat}
         />
         <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-        <UserLogOut user={user} setUser={setUser} />
+        <LogOut user={user} setUser={setUser} />
       </aside>
-      <MenuList
+      <ProductsList
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
         handleAddToOrder={handleAddToOrder}
       />
@@ -77,7 +77,7 @@ export default function NewOrderPage({ user, setUser }) {
         handleCheckout={handleCheckout}
       />
 
-      < Footer />
+      {/* < Footer /> */}
     </main>
   );
 }

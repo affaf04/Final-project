@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import * as userService from '../utilities/users-service'
+import * as userService from '../../utilities/users-service'
+import './Header.css'
+
 function Header ({user ,setUser}) {
 
   function handleLogOut() {
@@ -11,17 +13,19 @@ function Header ({user ,setUser}) {
   }
   return (
     <>
-      <nav style={{ justifyContent: "space-evenly", display: "flex" }}>
+      <nav className='header'>
 
       <div style={{justifyContent:'space-around'}}>
         <p style={{margin:'1em'}}>Welcome {user.name}, </p><hr/>
         <p style={{margin:'1em'}}> Logged In : {user.email}</p>
         <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
       </div>
-
+       <div  className='navlinks'>
         <Link to="/orders">Order History</Link>
 
         <Link to="/orders/new">New Order</Link>
+       </div>
+        
       </nav>
     </>
   );

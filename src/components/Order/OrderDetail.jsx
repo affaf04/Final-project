@@ -1,4 +1,4 @@
-import styles from './orderstyles.css';
+import './orderstyles.css';
 import LineItem from '../Products/LineItem';
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
@@ -14,8 +14,8 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
     );
 
     return (
-      <div className={styles.OrderDetail}>
-        <div className={styles.sectionHeading}>
+      <div className='OrderDetail'>
+        <div className='sectionHeading'>
           {order.isPaid ?
             <span>ORDER <span className="smaller">{order.orderId}</span></span>
             :
@@ -23,13 +23,13 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           }
           <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
-        <div className={`${styles.lineItemContainer} flex-ctr-ctr flex-col scroll-y`}>
+        <div className='lineItemContainer' style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll', alignItems: 'center', justifyContent: 'center' }} >
           {lineItems.length ?
             <>
               {lineItems}
-              <section className={styles.total}>
+              <section className='total'>
                 {order.isPaid ?
-                  <span className={styles.right}>TOTAL&nbsp;&nbsp;</span>
+                  <span className='right'>TOTAL&nbsp;&nbsp;</span>
                   :
                   <button
                     className="btn-sm"
@@ -38,11 +38,11 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                   >CHECKOUT</button>
                 }
                 <span>{order.totalQty}</span>
-                <span className={styles.right}>${order.orderTotal.toFixed(2)}</span>
+                <span className='right'>${order.orderTotal.toFixed(2)}</span>
               </section>
             </>
             :
-            <div className={styles.hungry}>Hungry?</div>
+            <div className=''></div>
           }
         </div>
       </div>

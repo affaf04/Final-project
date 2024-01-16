@@ -1,5 +1,5 @@
 import OrderListItem from './OrderListItem';
-import styles from './orderstyles.css';
+import './orderstyles.css';
 
 export default function OrderList({ orders, activeOrder, handleSelectOrder }) {
 const orderItems = orders.map(o =>
@@ -12,11 +12,11 @@ const orderItems = orders.map(o =>
 );
 
 return (
-  <main className={styles.OrderList}>
+  <main className='OrderList'>
     {orderItems.length ?
       orderItems
       :
-      <span className={styles.noOrders}>No Previous Orders</span>
+      <span className='noOrders'>No Previous Orders</span>
     }
   </main>
 );

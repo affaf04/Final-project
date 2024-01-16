@@ -1,4 +1,4 @@
-import styles from './historystyle.css';
+import './historystyle.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/order-api';
@@ -31,8 +31,8 @@ export default function OrderHistoryPage({ user, setUser }) {
 
   /*--- Rendered UI --- */
   return (
-    <main className={styles.OrderHistoryPage}>
-      <aside className={styles.aside}>
+    <main className='OrderHistoryPage'>
+      <aside className='aside'>
         {/* <Logo /> */}
         <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
         <LogOut user={user} setUser={setUser} />
