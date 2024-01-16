@@ -1,9 +1,9 @@
 import styles from './MenuList.module.css';
-import MenuListItem from '../MenuListItem/MenuListItem';
+import ProductsListItem from './ProductsListItem';
 
-export default function MenuList({ menuItems, handleAddToOrder }) {
+export default function ProductsList({ menuItems, handleAddToOrder }) {
   const items = menuItems.map(item =>
-    <MenuListItem
+    <ProductsListItem
       key={item._id}
       handleAddToOrder={handleAddToOrder}
       menuItem={item}
