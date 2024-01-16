@@ -1,3 +1,4 @@
+import styles from './style.css';
 
 export default function ProductsListItem({ menuItem, handleAddToOrder }) {
     return (

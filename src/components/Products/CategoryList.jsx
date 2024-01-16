@@ -1,4 +1,4 @@
-import styles from './CategoryList.module.css';
+import styles from './style.css';
 
 
 export default function CategoryList({ categories, activeCat, setActiveCat }) {

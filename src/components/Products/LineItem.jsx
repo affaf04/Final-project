@@ -1,4 +1,4 @@
-import styles from './LineItem.module.css';
+import styles from './style.css';
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
 return (

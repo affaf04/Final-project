@@ -1,4 +1,4 @@
-import styles from './MenuList.module.css';
+import styles from './style.css';
 import ProductsListItem from './ProductsListItem';
 
 export default function ProductsList({ menuItems, handleAddToOrder }) {
@@ -10,7 +10,7 @@ export default function ProductsList({ menuItems, handleAddToOrder }) {
     />
   );
   return (
-    <main className={styles.MenuList}>
+    <main className={styles.ProductsList}>
       {items}
     </main>
   );
