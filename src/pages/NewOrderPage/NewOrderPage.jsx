@@ -54,9 +54,12 @@ export default function NewOrderPage({ user, setUser }) {
     navigate('/orders');
   }
 
-  return (
+  return (    
+  
+  <>
+  {/* <Header user={user} setUser={setUser} /> */}
+
     <main className='NewOrderPage'>
-    <Header user={user} setUser={setUser} />
       <aside>
         {/* <Logo /> */}
         <CategoryList
@@ -79,5 +82,7 @@ export default function NewOrderPage({ user, setUser }) {
 
       {/* < Footer /> */}
     </main>
+
+    </>
   );
 }

@@ -119,8 +119,9 @@ const Item = require('./models/item');
     {name: 'Foundation', img: 'https://www.makeupforever.com/dw/image/v2/BCRL_PRD/on/demandware.static/-/Sites-Makeupforever_master_catalog/default/dwe03c0514/images/I000075106/US-3548752185189_I000075106_HD-SKIN-FOUNDATION-22-30ML-1N06_Face_0.png', category: categories[7], price: 5.95},
 
   ]);
-
   console.log(items)
+
+  
 
   process.exit();
 

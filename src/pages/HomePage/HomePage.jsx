@@ -1,35 +1,59 @@
-const React =require('react');
+import React from "react";
+import "./HomePage.css";
+import { Link } from "react-router-dom";
+import PopularItems from "../../components/Popular/PopularItems";
 
-class Home extends React.Component {  
-  render() {
+
+
+function HomePage () {  
+ 
         return(
-            <div title="t">
-              <h3 className='slogan'>
-                "Scented Serenity"</h3>
-              <div className="images-container">
-                <a href="/products"><div className="overlay"></div></a>
-                <div className="stock-image">
-                  <img src="https://media.gettyimages.com/id/1333713382/photo/ayurveda-aromatherapy-with-essential-oil-diffuser.jpg?s=612x612&w=0&k=20&c=RauVrbIFEl49GuSehYUU-DlW_WhVpPENqIGjs_wQU6I=" alt="photo" />
-                </div>
-                <div className="stock-image">
-                  <img src="https://media.gettyimages.com/id/1305112924/photo/electric-essential-oils-aroma-diffuser-oil-bottles-and-flowers-on-gray-surface-with-reflection.jpg?s=612x612&w=0&k=20&c=NZspDgJzFO4Qj1Gck5776qJEkjh-ynXN8sY4IHL-sac=" alt="photo" />
-                </div>
-                <div className="stock-image">
-                  <img src="https://media.gettyimages.com/id/169946754/photo/stacks-homemade-organic-bars-of-soap-with-lavender-on-top.jpg?s=612x612&w=0&k=20&c=GP-wCfaoN99un_87RhSR3QZSX1GzT9895EXRWsSG-6Q=" alt="photo" />
-                </div>
-              </div>
+      <div title="Inside Out ">
+         <h3 className='slogan'></h3>
+           <div className="container">
+           <div className="slider-wrapper">
+          <div className="slider">
+            <img
+              id="silder-1"
+              src="https://risebyrare.com/cdn/shop/files/Slider__1.png"
+              alt="img"
+            />
+            <img
+              id="silder-2"
+              src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2hpcHBvdW5pY29ybl9jb3NtZXRpY19tYWtlX3VwX2ZsYXRfbGF5X3BpbmtfYmFja2dyb3VuZF9iODQxY2U1MC1mNDRhLTQ4ODAtODEwMC1hMDc5Yjc4MjA3NDUuanBn.jpg"
+              alt="img"
+            />
+            <img
+              id="silder-3"
+              src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-715119ea--blog-creative-1.jpg"
+              alt="img"
+            />
+            <div className="text">
+               <h3>Welcome to our Inside Out store!</h3>
+               <p className='indent'>At our store, we offer a wide range of high-quality beauty products.</p>
+              <Link to="./orders" className="li">
+                <button className="button">Start Now</button>
+              </Link>
+            </div>
+            </div> 
+            </div></div>
+            <div className="slider-nav">
+            <a href="#silder-1"></a>
+            <a href="#silder-2"></a>
+            <a href="#silder-3"></a>
+          </div>
           <div className='container'>
-            <link rel="stylesheet" type="text/css" href="../css/home.css"/>
-                  <h3>Welcome to our aromatherapy store!</h3>
-                  <p className='indent'>At our store, we offer a wide range of high-quality essential oils and aromatherapy products to help you relax, rejuvenate, and find balance in your daily life.
-                    </p>
-                  <p className='indent'>Our selection includes a wide range of pure essential oils, blends, diffusers, and other products for you to choose from. Whether you are looking for a natural solution to support your health and wellness, or simply want to create a pleasant and soothing atmosphere in your home, we have something for everyone.</p>
-                  <p className='indent'>
-                  Thank you for choosing our store for all of your aromatherapy needs. We hope you find what you are looking for and enjoy your shopping experience with us.</p>
+            <div>
+              <h3> Best Sellers</h3>
+              <p> Our most popular products</p>
+              <PopularItems />
+            </div>
+          <p className='indent'>
+                  Thank you for choosing our store. We hope you enjoy your shopping experience with us.</p>
           </div>
 
           </div>
         )
     }
-}
-module.exports = Home
+
+    export default HomePage;
