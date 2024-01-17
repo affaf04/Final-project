@@ -26,9 +26,12 @@ function PopularItems() {
           <p>Name: {p.name}</p>
           <img className='img 'src={p.img} alt={p.name} />
           <p>Price: ${p.price.toFixed(2)}</p>
+          <button className="btn-sm" onClick={() => handleAddToOrder(p._id)}>
+            ADD
+          </button>
         </div>
+        
       ))}
-      <button onClick={handleAddToOrder={handleAddToOrder}} > ADD </button>
 
     </div>
   )

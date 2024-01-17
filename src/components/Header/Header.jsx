@@ -18,6 +18,7 @@ function Header({ user, setUser }) {
         <div className='navlinks'>
           <Link to="/orders">Order History</Link>
           <Link to="/orders/new">New Order</Link>
+          {/* <link to="/cart"> Cart </link> */}
         </div>
         
         {user ? (

@@ -3,13 +3,14 @@
 require("dotenv").config();
 // Connect to the database
 require("./config/database");
+
 const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan"); //JSON request
 const port = process.env.PORT || 3001;
 const app = express();
-
+const stripe = require('stripe')('');
 //----------------------------------------------Midware
 
 app.use(logger("dev"));
@@ -27,6 +28,8 @@ app.use(require('./config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+// app.use('/api/stripe', require ('./routes/api/stripe'))
+
 // Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));

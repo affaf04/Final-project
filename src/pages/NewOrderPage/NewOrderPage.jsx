@@ -8,6 +8,7 @@ import CategoryList from '../../components/Products/CategoryList';
 import OrderDetail from '../../components/Order/OrderDetail';
 import LogOut from '../../components/LogOut/LogOut';
 import Header from '../../components/Header/Header'
+import Cart from '../Cart/Cart';
 // import Footer from '../../components/Footer/Footer'
 
 export default function NewOrderPage({ user, setUser }) {
@@ -34,25 +35,25 @@ export default function NewOrderPage({ user, setUser }) {
     }
     getCart();
   }, []);
-  // Providing an empty 'dependency array'
-  // results in the effect running after
-  // the FIRST render only
+ 
 
-  /*-- Event Handlers --*/
   async function handleAddToOrder(itemId) {
     const updatedCart = await ordersAPI.addItemToCart(itemId);
+    
     setCart(updatedCart);
+    alert ('successfully addded to cart')
+
   }
 
-  async function handleChangeQty(itemId, newQty) {
-    const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-    setCart(updatedCart);
-  }
+  // async function handleChangeQty(itemId, newQty) {
+  //   const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
+  //   setCart(updatedCart);
+  // }
 
-  async function handleCheckout() {
-    await ordersAPI.checkout();
-    navigate('/orders');
-  }
+  // async function handleCheckout() {
+  //   await ordersAPI.checkout();
+  //   navigate('/orders');
+  // }
 
   return (    
   
@@ -74,11 +75,13 @@ export default function NewOrderPage({ user, setUser }) {
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
         handleAddToOrder={handleAddToOrder}
       />
-      <OrderDetail
+
+      {/* <Cart /> */}
+      {/* <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
-      />
+      /> */}
 
       {/* < Footer /> */}
     </main>

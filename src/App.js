@@ -7,6 +7,7 @@ import NewOrderPage from './pages/NewOrderPage/NewOrderPage'
 import OrderHistoryPage from './pages/OrderHistoryPage/OrderHistoryPage'
 import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
+import Cart from './pages/Cart/Cart';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -23,7 +24,9 @@ export default function App() {
           <>
             <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser} />} />
             <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
+            <Route path='/cart' element ={<Cart user={user} setUser={setUser} />} />
             <Route path="/*" element={<Navigate to="/orders/new" />} />
+
           </>
         ) : (
           <Route path="/*" element={<Navigate to="/auth" />} />

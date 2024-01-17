@@ -25,7 +25,6 @@ import sendRequest from './send-request';
     // Changing data on the server, so make it a POST request
     return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
   }
-
   // Return all paid orders for the logged in user
   export function getOrderHistory() {
     return sendRequest(`${BASE_URL}/history`);
