@@ -14,9 +14,9 @@ function PopularItems() {
       const [cart, setCart] = useState(null);
     
       
-        function handleAddToOrder(itemId) {
-        const cart =  ordersAPI.addItemToCart(itemId);
-        setCart(cart);
+        function handleAddToOrder(p) {
+        const updatecart =  ordersAPI.addItemToCart(p);
+        setCart(updatecart);
         }
     
   return (

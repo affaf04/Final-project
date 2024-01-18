@@ -19,15 +19,16 @@ function Header({ user, setUser }) {
           <Link to="/"> Home </Link>
           <Link to="/orders">Order History</Link>
         </div>
+        <img style={{ width: '400px' ,height: '100px'}} className="logo" src={logo} alt="logo" />
+
         <div className="right">
-        <img className="logo" src={logo} alt="logo" />
           <Link to="/orders/new" className="order">New Order</Link>
           <Link to="/cart" className="cart">Cart</Link>
         </div>
         {user ? (
           <div className="right">
             <div className="welcome">
-              <p>Welcome {user.name}</p>
+              <span>Welcome {user.name}</span>
             </div>
             <div className="logout">
               <Link to="" onClick={handleLogOut}>
