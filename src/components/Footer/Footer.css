@@ -13,6 +13,7 @@
     height: 100px;
     width: 100px;
     align-items: center;
+    margin-right: 30%;
 }
 .social{
     justify-content: space-between;
