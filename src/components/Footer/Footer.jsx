@@ -10,10 +10,10 @@ function Footer() {
       <p className='indent'>
          Thank you for choosing our store. We hope you enjoy your shopping experience with us.</p>      
     <div className='social'>
-      <a href="url">
+      <a href="https://www.instagram.com/">
       <img src="https://716squash.org/wp-content/uploads/2022/10/Round-shiny-silver-frame-Instagram-icon-button-with-gradient-effect-on-transparent-background-PNG.png" alt="img" height={'20px'} width={'20px'} />
        </a>
-       <a href="url">
+       <a href="https://www.facebook.com/">
          <img src="https://i.pinimg.com/originals/42/75/49/427549f6f22470ff93ca714479d180c2.png" alt="img" height={'35px'} width={'35px'} />
         </a>
 
