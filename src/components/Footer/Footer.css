@@ -12,6 +12,7 @@
 .logo {
     height: 50px;
     width: 50px;
+    align-items: center;
 }
 .social{
     justify-content: space-between;
