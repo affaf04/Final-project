@@ -1,0 +1,25 @@
+.footer {
+    background-image: url(https://assets-global.website-files.com/6481b5ce8392950068b0a2be/64870b4890a7efafd95c2bf4_contact-heading-image.svg);
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: #405244;
+    letter-spacing: 2px;
+    border-top: 1px solid ;
+    
+}
+.logo {
+    height: 50px;
+    width: 50px;
+}
+.social{
+    justify-content: space-between;
+    padding: 25px;
+    margin: 1em;
+}
+.social img {
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+}

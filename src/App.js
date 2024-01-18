@@ -8,6 +8,7 @@ import OrderHistoryPage from './pages/OrderHistoryPage/OrderHistoryPage'
 import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import Cart from './pages/Cart/Cart';
+import Footer from './components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/*" element={<Navigate to="/auth" />} />
         )}
       </Routes>
+      <Footer />
     </main>
   );
 }
