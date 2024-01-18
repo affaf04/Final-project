@@ -10,8 +10,8 @@ const favicon = require("serve-favicon");
 const logger = require("morgan"); //JSON request
 const port = process.env.PORT || 3001;
 const app = express();
-const stripe = require('stripe')('');
-//----------------------------------------------Midware
+
+
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, "build")));
 
 //----------------------------------------------Routes
 // Put API routes here, before the "catch all" route
+  
 
 // Middleware to verify token and assign user object of payload to req.user.
 
@@ -42,8 +43,10 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
+///paypal api
 
 
+app.use('/api/paypal',ensureLoggedIn, require('./routes/api/paypal'));
 
 //----------------------------------------------Server
 app.listen(port, function () {
