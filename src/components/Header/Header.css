@@ -28,9 +28,14 @@
   display: flex;
   text-decoration: none;
   margin-right: 10px;
+  color: #ff5555;
+  text-decoration: none;
+  padding: 0;
+  margin-left: 1px;
+
 
 }
-.order {
+/* .order {
   margin-right: 4em; 
   color: #ff5555;
   text-decoration: none;
@@ -43,7 +48,7 @@
   text-decoration: none;
 
 
-}
+} */
 .right a:hover{
   color: #f0b4a6;
 
@@ -52,12 +57,12 @@
   margin-right: 10px;
 
 }
-.logo {
+/* .logo {
   width: 200px;
   height: 200px;
   margin-left: 4em;
 
-}
+} */
 
 .right .logout button {
   background-color: #ff5555;
