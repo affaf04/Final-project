@@ -46,7 +46,6 @@ app.get("/*", function (req, res) {
 ///paypal api
 
 
-app.use('/api/paypal',ensureLoggedIn, require('./routes/api/paypal'));
 
 //----------------------------------------------Server
 app.listen(port, function () {

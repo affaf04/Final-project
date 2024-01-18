@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 const ordersCtrl = require('../../controllers/api/orders');
 
@@ -12,5 +13,8 @@ router.post('/cart/items/:id', ordersCtrl.addToCart);
 router.post('/cart/checkout', ordersCtrl.checkout);
 // POST /api/orders/cart/qty
 router.put('/cart/qty', ordersCtrl.setItemQtyInCart);
+// router.post('/cart/creat', ordersCtrl.createOrder);
+// router.post('/cart/:orderID', ordersCtrl.captureOrder);
+
 
 module.exports = router;

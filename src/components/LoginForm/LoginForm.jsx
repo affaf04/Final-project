@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
-
+import './login.css'
 export default function LoginForm({ setUser }) {
   
 const [credentials, setCredentials] = useState({
@@ -31,9 +31,12 @@ async function handleSubmit(evt) {
 }
 
 return (
-  <div>
-    <h1>Log In Form</h1>
-    <div className="form-container" onSubmit={handleSubmit}>
+  <div className='main'>      
+  
+    <h3>HEY GORGEOUS <br></br>
+     Welcome Back!</h3>
+
+    <div className="form-container" onSubmit={handleSubmit}>   
       <form autoComplete="off" >
         <label>Email</label>
         <input type="text" name="email" value={credentials.email} onChange={handleChange} required />

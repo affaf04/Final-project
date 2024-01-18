@@ -1,13 +1,18 @@
 const Order = require('../../models/order');
-// const Item = require('../../models/item');
+// const fetch = require('node-fetch');
+
 
 module.exports = {
   cart,
   addToCart,
   setItemQtyInCart,
   checkout,
-  history
+  history,
+  // generateAccessToken,
+  // createOrder,
+  // captureOrder,
 };
+
 
 // A cart is the unpaid order for a user
 async function cart(req, res) {
@@ -64,5 +69,45 @@ async function history(req, res) {
   }catch(e){
     res.status(400).json({ msg: e.message });
   }
-
 }
+// const generateAccessToken = async () => {
+//   try {
+//     const clientId = process.env.PAYPAL_CLIENT_ID;
+//     const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
+
+//     const auth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+//     const response = await fetch('https://api-m.sandbox.paypal.com/v1/oauth2/token', {
+//       method: 'POST',
+//       body: 'grant_type=client_credentials',
+//       headers: {
+//         Authorization: `Basic ${auth}`,
+//       },
+//     });
+
+//     const data = await response.json();
+//     return data.access_token;
+//   } catch (error) {
+//     console.error('Failed to generate Access Token:', error);
+//   }
+// };
+// async function createOrder(req, res) {
+//   try {
+//     const { lineItems, totalAmount } = req.body;
+//     const { jsonResponse, httpStatusCode } = await createPayPalOrder(lineItems, totalAmount);
+//     res.status(httpStatusCode).json(jsonResponse);
+//   } catch (error) {
+//     console.error("Failed to create order:", error);
+//     res.status(500).json({ error: "Failed to create order." });
+//   }
+// }
+
+// async function captureOrder(req, res) {
+//   try {
+//     const { orderID } = req.params;
+//     const { jsonResponse, httpStatusCode } = await capturePayPalOrder(orderID);
+//     res.status(httpStatusCode).json(jsonResponse);
+//   } catch (error) {
+//     console.error("Failed to capture order:", error);
+//     res.status(500).json({ error: "Failed to capture order." });
+//   }
+// }

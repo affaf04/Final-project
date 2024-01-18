@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as ordersAPI from "../../utilities/order-api";
-import * as usersAPI from "../../utilities/users-api";
 import OrderDetail from "../../components/Order/OrderDetail";
 import empty from "./empty.gif";
 
@@ -27,47 +26,60 @@ export default function CartPage() {
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
     setCart(updatedCart);
+    initiatePayPalPayment(updatedCart);
+
     console.log(updatedCart);
-  }
 
+  }async function initiatePayPalPayment(cart) {
+  try {
+    const response = await fetch('/api/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        lineItems: cart.lineItems,
+        totalAmount: cart.orderTotal,
+      }),
+    });
 
-  const handlePayment = async () => {
-   
-      window.paypal
-        .Buttons({
-          createOrder: async (data, actions) => {
-            const cart = ordersAPI.getCart()
-            const response = await fetch('/api/cart', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
+    const order = await response.json();
+
+    window.paypal.Buttons({
+      createOrder: (data, actions) => {
+        return {
+          purchase_units: [{
+            items: cart.lineItems.map(item => ({
+              name: item.itemId,
+              quantity: item.newQty,
+              unit_amount: {
+                currency_code: 'USD',
+                value: item.totalQty,
               },
-              body: JSON.stringify({
-                cart: cart.lineItems.map(item => ({
-                  id: item.id,
-                  quantity: item.quantity,
-                })),
-              }),
-            });
+            })),
+            amount: {
+              currency_code: 'USD',
+              value: cart.orderTotal,
+            },
+          }],
+        };
+      },
+      onApprove: async (data, actions) => {
+        const captureResult = await actions.order.capture();
+        console.log('Payment successful. Capture result:', captureResult);
 
-            const order = await response.json();
+        navigate('/success');
+      },
+      onError: (error) => {
+        console.error('Error during payment:', error);
+      },
+    }).render('#paypal-button-container');
+  } catch (error) {
+    console.error('Error initiating PayPal payment:', error);
+  }
+}
 
-            return order.id;
-          },
-          onApprove: async (data, actions) => {
-            const captureResult = await actions.order.capture();
-            console.log('Payment successful. Capture result:', captureResult);
-
-            navigate('/success');
-          },
-          onError: (error) => {
-            console.error('Error during payment:', error);
-          },
-        })
-        .render('#paypal-button-container');
- 
-  };
-
+  
   return (
     <main className="CartPage">
       {cart.lineItems && cart.lineItems.length > 0 ? (
@@ -75,7 +87,7 @@ export default function CartPage() {
           <OrderDetail
             order={cart}
             handleChangeQty={handleChangeQty}
-            handleCheckout={handlePayment}
+            handleCheckout={ initiatePayPalPayment}
           />
           <div id="paypal-button-container"></div>
         </>

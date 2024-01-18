@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { signUp } from '../../utilities/users-service';
-
+import './singup.css'
 
 export default class SignUpForm extends Component {
   state = {
@@ -38,8 +38,9 @@ export default class SignUpForm extends Component {
 
     return (
       <>
-        <div>SignUpForm</div>
-        <div className="form-container">
+      <div className='main'>   
+         <h1>Create Your Account</h1>   
+          <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit} style={{margin:"1em"}}>
             <label>Name</label>
             <input
@@ -79,7 +80,7 @@ export default class SignUpForm extends Component {
           </form>
         </div>
         <p className="error-message">{this.state.error}</p>
-        
+        </div>
       </>
     );
   }

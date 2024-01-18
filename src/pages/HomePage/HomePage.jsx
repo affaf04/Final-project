@@ -9,11 +9,11 @@ function HomePage () {
  
         return(
       <div title="Inside Out ">
-         <h3 className='slogan'></h3>
+        <div style={{backgroundColor:'#fce4de'}}>
            <div className="container">
            <div className="slider-wrapper">
           <div className="slider">
-            <img
+            {/* <img
               id="silder-1"
               src="https://risebyrare.com/cdn/shop/files/Slider__1.png"
               alt="img"
@@ -27,31 +27,30 @@ function HomePage () {
               id="silder-3"
               src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-715119ea--blog-creative-1.jpg"
               alt="img"
-            />
+            /> */}
             <div className="text">
                <h3>Welcome to our Inside Out store!</h3>
-               <p className='indent'>At our store, we offer a wide range of high-quality beauty products.</p>
+               <h5 className='indent'>At our store, we offer a wide range of high-quality beauty products.</h5>
               <Link to="./orders" className="li">
                 <button className="button">Start Now</button>
               </Link>
             </div>
             </div> 
             </div></div>
-            <div className="slider-nav">
+            {/* <div className="slider-nav">
             <a href="#silder-1"></a>
             <a href="#silder-2"></a>
             <a href="#silder-3"></a>
-          </div>
+          </div> */}
           <div className='container'>
             <div>
               <h3> Best Sellers</h3>
               <p> Our most popular products</p>
               <PopularItems />
             </div>
-          <p className='indent'>
-                  Thank you for choosing our store. We hope you enjoy your shopping experience with us.</p>
+         
           </div>
-
+          </div>
           </div>
         )
     }

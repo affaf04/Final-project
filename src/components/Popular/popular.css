@@ -6,6 +6,23 @@ img {
     border: 0.1vmin solid var(--tan-3);
     border-radius: 1vmin;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-   align-items: center;
+    align-items: center;
   
   }
+
+  .pplr{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 1em;
+  }
+  p{
+    padding: 25px;
+    background-color: azure;
+    border: 2px solid #e28975;
+
+  }
+
+.btn-sm{
+    border: 2px solid #e28975;
+}

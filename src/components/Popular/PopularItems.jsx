@@ -20,9 +20,9 @@ function PopularItems() {
         }
     
   return (
-    <div>
+    <div className='pplr'>
          {popularItems.map(p => (
-        <div key={p.id}>
+        <div  key={p.id}>
           <p>Name: {p.name}</p>
           <img className='img 'src={p.img} alt={p.name} />
           <p>Price: ${p.price.toFixed(2)}</p>

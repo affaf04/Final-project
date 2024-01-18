@@ -7,9 +7,14 @@
     border-radius: 2vmin;
   }
   
+  .form{
+    display: flex;
+    flex-direction: row;
+
+  }
   .AuthPage h3 {
     margin-top: 4vmin;
     text-align: center;
-    color: var(--text-light);
+    color: plum;
     cursor: pointer;
   }

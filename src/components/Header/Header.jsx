@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import * as userService from '../../utilities/users-service'
-import './Header.css'
-
+import * as userService from "../../utilities/users-service";
+import "./Header.css";
+import logo from "./logo.png";
 
 function Header({ user, setUser }) {
   function handleLogOut() {
@@ -14,26 +14,37 @@ function Header({ user, setUser }) {
 
   return (
     <>
-      <nav className='header'>
-        <div className='navlinks'>
+      <nav className="header">
+        <div className="navlinks">
+          <Link to="/"> Home </Link>
           <Link to="/orders">Order History</Link>
-          <Link to="/orders/new">New Order</Link>
-          {/* <link to="/cart"> Cart </link> */}
         </div>
-        
+        <div className="right">
+        <img className="logo" src={logo} alt="logo" />
+          <Link to="/orders/new" className="order">New Order</Link>
+          <Link to="/cart" className="cart">Cart</Link>
+        </div>
         {user ? (
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <p style={{ margin: '1em' }}>Welcome {user.name}, Logged In: {user.email}</p>
+          <div className="right">
+            <div className="welcome">
+              <p>Welcome {user.name}</p>
             </div>
-            <div style={{ marginLeft: 'auto' }}>
-              <Link to="" onClick={handleLogOut}><button className='button'>Log-Out</button></Link>
+            <div className="logout">
+              <Link to="" onClick={handleLogOut}>
+                <button className="button">Log-Out</button>
+              </Link>
             </div>
           </div>
         ) : (
-          <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Link to="/auth/login">Login</Link>
-            <Link to="/auth/signup" style={{ marginLeft: '1em' }}>Sign Up</Link>
+          <div className="right">
+            <Link to="/auth/login">
+              {" "}
+              <button className="btn">Login</button>
+            </Link>
+            <Link to="/auth/signup" style={{  marginLeft: "1em" }}>
+              {" "}
+              <button className="btn"> Sign Up </button>
+            </Link>
           </div>
         )}
       </nav>
