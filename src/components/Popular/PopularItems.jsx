@@ -27,7 +27,7 @@ function PopularItems() {
         <div  key={p.id}>
           <p>Name: {p.name}</p>
           <img className='img 'src={p.img} alt={p.name} />
-          <span>Price: ${p.price.toFixed(2)}</span>
+          <p>Price: ${p.price.toFixed(2)}</p>
           
         </div>
         
