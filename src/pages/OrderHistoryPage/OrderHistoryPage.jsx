@@ -2,7 +2,6 @@ import './historystyle.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/order-api';
-// import Logo from '../../components/Logo/Logo';
 import LogOut from '../../components/LogOut/LogOut';
 import OrderList from '../../components/Order/OrderList';
 import OrderDetail from '../../components/Order/OrderDetail';
