@@ -19,11 +19,13 @@ function Header({ user, setUser }) {
           <Link to="/"> Home </Link>
           <Link to="/orders">Order History</Link>
         </div>
-        <img style={{ width: '300px' ,height: '100px', padding: '0px'}} className="logo" src={logo} alt="logo" />
+        <img style={{ width: '300px' ,height: '100px', marginRight: '20px', cursor:"pointer"}} className="logo" src={logo} alt="logo" />
 
         <div className="right">
-          <Link to="/orders/new" >New Order</Link>
-          <Link to="/cart" >Cart</Link>
+          <Link to="/orders/new" className="order" >New Order</Link>
+          <Link to="/cart" className="cart">Cart</Link>
+          <Link to="/search" className="search">Search</Link>
+
         </div>
         {user ? (
           <div className="right">

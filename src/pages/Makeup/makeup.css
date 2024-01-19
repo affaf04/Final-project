@@ -1,0 +1,41 @@
+
+.searchBar{
+    background-color: #f5f8f6;
+     padding: 20px;
+     margin-top: 55px;
+     width: 100%; 
+     background-image: url('https://mywellbalancedlife.com/wp-content/uploads/2020/03/Depositphotos_228671362_xl-2015-scaled.jpg');
+     background-size:cover;
+      background-position: center; 
+      background-repeat: no-repeat;
+}
+
+.input{
+    width: 260px;
+    height: 40px;
+    border-radius: 22px;
+    margin-top: 5rem;
+}
+.result {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 20px;
+    margin-top: 0px;
+    padding: 1rem;
+    border:#405244 1px solid;
+    border-radius: 30px;
+    margin-top: 10px;
+
+}
+.one {
+    border: 1px solid #e28975;
+}
+
+.img {
+    height:250px;
+    width:250px;
+    align-items: center;
+    border-radius: 20%;
+    box-shadow: 0 4px 8px rgba(239, 120, 120, 0.2);
+
+}

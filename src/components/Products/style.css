@@ -26,18 +26,18 @@
 
 
 /* ---------- */
-
 .LineItem {
   width: 100%;
   display: grid;
-  grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
+  grid-template-rows: 9rem;
+  grid-template-columns: 3vw 20.35vw 7vw 0vw 1vw;
   padding: 1vmin 0;
   color: var(--text-light);
   background-color: var(--white);
-  border-top: 0.1vmin solid var(--tan-3);
+  border: 2px solid #e28975;
   font-size: 1.5vw;
-} 
-
+  padding: 4rem;
+}
 .LineItem:last-child {
   border-bottom: 0.1vmin solid var(--tan-3);
 }
@@ -45,19 +45,28 @@
 .LineItem .qty {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 1.3vw;
+  
 }
 
 .LineItem .extPrice {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1.5em;
 }
 
 .LineItem button {
   margin: 0;
+}
+.btn-xs{
+  width: 20px;
+  height: 20px;
+}
+.products-info{
+  margin-top: 100px;
+  font-size: 20px;
+  margin-left: 0px; 
 }
 /* ------------------------- */
 

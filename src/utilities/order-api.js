@@ -8,10 +8,11 @@ import sendRequest from './send-request';
   }
 
   // Add an item to the cart
-  export function addItemToCart(itemId) {
+  export function addItemToCart(itemId ) {
     // Just send itemId for best security (no pricing)
     return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST');
   }
+
 
   // Update the item's qty in the cart
   // Will add the item to the order if not currently in the cart

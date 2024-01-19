@@ -10,19 +10,23 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
+          flexDirection: "row",
+          justifyContent: 'spaceBetween',
+
         }}
       >
-        <span className="align-ctr">{lineItem.item.name}</span>
-        <span>{lineItem.item.price.toFixed(2)}</span>
+        <span className="products-info">{lineItem.item.name}</span>
+        <span className="products-info"> {lineItem.item.price.toFixed(2)}</span>
       </div>
-      <div className=".qty" style={{ justifyContent: isPaid && "center" }}>
+      <div className=".qty" >
         {!isPaid && (
           <button
             className="btn-xs"
             onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
-          ></button>
+            
+          >
+            -
+          </button>
         )}
         <span>{lineItem.qty}</span>
         {!isPaid && (

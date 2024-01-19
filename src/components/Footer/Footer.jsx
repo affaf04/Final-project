@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className='footer'>
       <h2> Inside Out Store </h2>
-      <img className='logo' src={logo} alt='menu' />
+      <img style={{ width: '300px' ,height: '100px', marginRight: '20px', cursor:"pointer"}} className='logo' src={logo} alt='menu' />
       <p className='indent'>
          Thank you for choosing our store. We hope you enjoy your shopping experience with us.</p>      
     <div className='social'>

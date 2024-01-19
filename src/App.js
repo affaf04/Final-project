@@ -8,6 +8,7 @@ import OrderHistoryPage from './pages/OrderHistoryPage/OrderHistoryPage'
 import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import Cart from './pages/Cart/Cart';
+import Makeup from './pages/Makeup/Makeup';
 import Footer from './components/Footer/Footer';
 
 export default function App() {
@@ -26,6 +27,8 @@ export default function App() {
             <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser} />} />
             <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
             <Route path='/cart' element ={<Cart user={user} setUser={setUser} />} />
+            <Route path='/search' element ={<Makeup user={user} setUser={setUser} />} />
+
             <Route path="/*" element={<Navigate to="/orders/new" />} />
 
           </>

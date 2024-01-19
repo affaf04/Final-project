@@ -79,7 +79,7 @@ export default class SignUpForm extends Component {
             </button>
           </form>
         </div>
-        <p className="error-message">{this.state.error}</p>
+        <span className="error-message">{this.state.error}</span>
         </div>
       </>
     );

@@ -26,59 +26,20 @@ export default function CartPage() {
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
     setCart(updatedCart);
-    initiatePayPalPayment(updatedCart);
 
     console.log(updatedCart);
-
-  }async function initiatePayPalPayment(cart) {
-  try {
-    const response = await fetch('/api/cart', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        lineItems: cart.lineItems,
-        totalAmount: cart.orderTotal,
-      }),
-    });
-
-    const order = await response.json();
-
-    window.paypal.Buttons({
-      createOrder: (data, actions) => {
-        return {
-          purchase_units: [{
-            items: cart.lineItems.map(item => ({
-              name: item.itemId,
-              quantity: item.newQty,
-              unit_amount: {
-                currency_code: 'USD',
-                value: item.totalQty,
-              },
-            })),
-            amount: {
-              currency_code: 'USD',
-              value: cart.orderTotal,
-            },
-          }],
-        };
-      },
-      onApprove: async (data, actions) => {
-        const captureResult = await actions.order.capture();
-        console.log('Payment successful. Capture result:', captureResult);
-
-        navigate('/success');
-      },
-      onError: (error) => {
-        console.error('Error during payment:', error);
-      },
-    }).render('#paypal-button-container');
-  } catch (error) {
-    console.error('Error initiating PayPal payment:', error);
   }
-}
-
+  
+  async function handleCheckout() {
+      await ordersAPI.checkout();
+      navigate('/orders');
+    }
+  
+  
+  
+  
+  
+  
   
   return (
     <main className="CartPage">
@@ -87,9 +48,8 @@ export default function CartPage() {
           <OrderDetail
             order={cart}
             handleChangeQty={handleChangeQty}
-            handleCheckout={ initiatePayPalPayment}
+            handleCheckout={ handleCheckout}
           />
-          <div id="paypal-button-container"></div>
         </>
       ) : (
         <div
@@ -102,7 +62,7 @@ export default function CartPage() {
           }}
         >
           <img src={empty} alt="Empty Cart" />
-          <p>Empty Cart</p>
+          <p>Nothing in your cart </p>
         </div>
       )}
     </main>
