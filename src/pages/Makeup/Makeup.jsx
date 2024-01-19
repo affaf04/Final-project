@@ -10,6 +10,7 @@ const Makeup = () => {
   const fetchProducts = async () => {
     try {
       const response = await fetch(
+        `http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=${keyword}`
       )
 
       const data = await response.json();
