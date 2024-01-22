@@ -9,6 +9,8 @@ import OrderDetail from '../../components/Order/OrderDetail';
 import LogOut from '../../components/LogOut/LogOut';
 import Header from '../../components/Header/Header'
 import Cart from '../Cart/Cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import Footer from '../../components/Footer/Footer'
 
 export default function NewOrderPage({ user, setUser }) {
@@ -41,7 +43,7 @@ export default function NewOrderPage({ user, setUser }) {
     const updatedCart = await ordersAPI.addItemToCart(itemId);
     
     setCart(updatedCart);
-    alert ('successfully addded to cart')
+    toast.success('Successfully added to cart');
 
   }
 
@@ -68,13 +70,13 @@ export default function NewOrderPage({ user, setUser }) {
           cart={setCart}
           setActiveCat={setActiveCat}
         />
-        <Link to="/orders" className="button btn">PREVIOUS ORDERS</Link>
-        <LogOut user={user} setUser={setUser} />
+        <Link to="/orders" className="porder">PREVIOUS ORDERS</Link>
       </aside>
       <ProductsList
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
         handleAddToOrder={handleAddToOrder}
       />
+   
 
       {/* <Cart /> */}
       {/* <OrderDetail
@@ -85,7 +87,15 @@ export default function NewOrderPage({ user, setUser }) {
 
       {/* < Footer /> */}
     </main>
+    <div style={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}}>
 
+             <ToastContainer/>
+
+      </div>
     </>
   );
 }

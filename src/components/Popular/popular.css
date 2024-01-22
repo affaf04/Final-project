@@ -5,15 +5,15 @@ img {
     background-color: var(--tan-1);
     border: 0.1vmin solid var(--tan-3);
     border-radius: 1vmin;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(196, 44, 44, 0.1); 
     align-items: center;
   
   }
 
   .pplr{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    margin: 1em;
+   
+  margin-right: 2em;
+    
   }
   p{
     padding: 25px;

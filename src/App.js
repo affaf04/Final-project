@@ -16,6 +16,7 @@ export default function App() {
 
   return (
     <main className={styles.App}>
+
       <Header user={user} setUser={setUser} />
 
       <Routes>
@@ -28,7 +29,6 @@ export default function App() {
             <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
             <Route path='/cart' element ={<Cart user={user} setUser={setUser} />} />
             <Route path='/search' element ={<Makeup user={user} setUser={setUser} />} />
-
             <Route path="/*" element={<Navigate to="/orders/new" />} />
 
           </>

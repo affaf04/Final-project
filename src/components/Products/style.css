@@ -71,6 +71,8 @@
 /* ------------------------- */
 
 .MenuList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   background-color: var(--tan-1);
   border: 0.1vmin solid red;
   border-radius: 2vmin;
@@ -82,9 +84,8 @@
 /* ------------------- */
 
 .MenuListItem {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   align-items: center;
   margin-bottom: 3vmin;
   padding: 2vmin;
