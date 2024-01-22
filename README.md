@@ -8,6 +8,7 @@ Inside Out is a MERN (MongoDB, Express.js, React.js, Node.js) stack application 
 <img width="550" alt="Screenshot 1" src="https://github.com/affaf04/Final-project/assets/141270222/4fa78e06-cdde-455b-82ac-005236cd6c35">
 
 <img width="422" alt="Screenshot 3" src="https://github.com/affaf04/Final-project/assets/141270222/c7e9e1a2-7778-4092-ba88-5791647dfe6f">
+
 <img width="606" alt="Screenshot 4" src="https://github.com/affaf04/Final-project/assets/141270222/f98e659d-4b53-46fa-95dd-62cd31744d67">
 
 <img width="507" alt="Screenshot5" src="https://github.com/affaf04/Final-project/assets/141270222/a0fdcf83-03fe-4cc0-9bdc-e8064d111719">
