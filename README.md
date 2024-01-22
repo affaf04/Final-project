@@ -12,4 +12,21 @@ In the project directory, you can run:
 
 - Database: MongoDB
 
+Final Project:
 
+https://perscholas.instructure.com/courses/1667/assignments/327082?module_item_id=1141100
+
+
+##getting started
+   
+   
+##link to project planning (Trello) :
+
+https://trello.com/b/TQf2eFqu/final-project
+         
+##unsolved problems:
+Payment API .
+    
+##future enhancements:
+
+Adding payment API and shipping option. 
