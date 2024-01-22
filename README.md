@@ -11,11 +11,7 @@ In the project directory, you can run:
 - Backend: Node.js & Express.js
 
 - Database: MongoDB
-
-Final Project:
-
-https://perscholas.instructure.com/courses/1667/assignments/327082?module_item_id=1141100
-
+  
 
 ##getting started
    
