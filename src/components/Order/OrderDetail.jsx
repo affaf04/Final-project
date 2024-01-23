@@ -23,13 +23,13 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           }
           <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
-        <div className='lineItemContainer' style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll', alignItems: 'center', justifyContent: 'center' }} >
+        <div className='lineItemContainer' style={{ display: 'flex', flexDirection: 'column',  alignItems: 'center', justifyContent: 'center' }} >
           {lineItems.length ?
             <>
               {lineItems}
               <section className='total'>
                 {order.isPaid ?
-                  <span className='right'>TOTAL&nbsp;&nbsp;</span>
+                  <span className='right'> TOTAL </span>
                   :
                   <button
                     className="btn-sm"

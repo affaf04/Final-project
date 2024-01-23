@@ -13,7 +13,8 @@ export default function AuthPage({ setUser }) {
       </div>
       <div className="form">
 
-              {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+              {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} /> }
+
 
       </div>
     </main>

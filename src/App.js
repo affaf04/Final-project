@@ -21,7 +21,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/auth" element={<AuthPage user={user} setUser={setUser} />} />
+        <Route path="/auth" element={<AuthPage user={user} setUser={setUser} />}  />
 
         {user ? (
           <>
@@ -36,6 +36,7 @@ export default function App() {
           <Route path="/*" element={<Navigate to="/auth" />} />
         )}
       </Routes>
+      <div></div>
       <Footer />
     </main>
   );

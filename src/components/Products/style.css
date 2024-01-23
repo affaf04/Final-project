@@ -125,4 +125,5 @@
   font-size: 2vw;
   text-align: center;
   color: var(--text-light);
+  margin-right: 1em;
 }

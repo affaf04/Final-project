@@ -9,7 +9,7 @@ function HomePage () {
  
         return(
       <div title="Inside Out ">
-        <div style={{backgroundColor:'#fce4de'}}>
+        <div>
            <div className="container">
            <div className="slider-wrapper">
           <div className="slider">
@@ -29,8 +29,8 @@ function HomePage () {
               alt="img"
             /> */}
             <div className="text">
-               <h3>Welcome to our Inside Out store!</h3>
-               <h5 className='indent'>At our store, we offer a wide range of high-quality beauty products.</h5>
+               <h3 className="t">Welcome to our Inside Out store!</h3>
+               <h5 className='t2'>At our store, we offer a wide range of high-quality beauty products.</h5>
               <Link to="./orders" className="li">
                 <button className="button">Start Now</button>
               </Link>
@@ -44,7 +44,7 @@ function HomePage () {
           </div> */}
           <div className='container'>
             <div>
-              <h3> Best Sellers</h3>
+              <h3 className="b"> Best Selling</h3>
               <p> Our most popular products</p>
               <PopularItems />
             </div>

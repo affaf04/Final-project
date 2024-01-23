@@ -15,8 +15,8 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
 
         }}
       >
-        <span className="products-info">{lineItem.item.name}</span>
-        <span className="products-info"> {lineItem.item.price.toFixed(2)}</span>
+        {/* <span className="products-info">{lineItem.item.name}</span>
+        <span className="products-info"> {lineItem.item.price.toFixed(2)}</span> */}
       </div>
       <div className=".qty" >
         {!isPaid && (

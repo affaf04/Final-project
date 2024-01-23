@@ -1,47 +1,15 @@
 
-.container {
-    padding-top: 3rem;
-  }
+
   
   .slider-wrapper {
     position :relative;
     width: 100%;
     height: 90vh;
     margin: 0 auto;
-    overflow: hidden;
-  width: 100%;
-  animation: change 15s infinite ease-in-out;
-  }
-  
-  .slider {
-    display: flex;
-    overflow-x: auto;
     width: 100%;
-    height: 100%;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    transition: margin-right 4s;
-    transition: transform 0.5s ease;
-    box-shadow: 0 1.5rem 1rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
+    animation: change 15s infinite ease-in-out;
   }
-  
-  /* .slider img {
-    flex: 1 0 100%;
-    height: 100%;
-    scroll-snap-align: start;
-    object-fit: cover;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    transition: transform 0.5s ease;
-  
-  } */
 
-  
 .slider-nav {
     display: flex;
     column-gap: 1rem;
@@ -60,10 +28,18 @@
     transition: opacity ease 250ms;
   
   }
+  .b{
+    font-size: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  
+
   @keyframes change{
     0%
     {
         background-image: url(https://risebyrare.com/cdn/shop/files/Slider__1.png);
+        margin-top: 0;
         background-size: cover;
     }
     40%
@@ -76,6 +52,7 @@
     {
         background-image: url(https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-715119ea--blog-creative-1.jpg);
         background-size: cover;
+
 
     }
     60%
@@ -83,17 +60,20 @@
         background-image: url(https://risebyrare.com/cdn/shop/files/Slider__1.png);
         background-size: cover;
 
+
     }
     80%
     {
         background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2hpcHBvdW5pY29ybl9jb3NtZXRpY19tYWtlX3VwX2ZsYXRfbGF5X3BpbmtfYmFja2dyb3VuZF9iODQxY2U1MC1mNDRhLTQ4ODAtODEwMC1hMDc5Yjc4MjA3NDUuanBn.jpg);
         background-size: cover;
 
+
     }
     100%
     {
         background-image: url(https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-715119ea--blog-creative-1.jpg);
         background-size: cover;
+
 
     }
 }

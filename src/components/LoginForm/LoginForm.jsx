@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 import './login.css'
+import { Route, Navigate } from 'react-router-dom';
+
 export default function LoginForm({ setUser }) {
   
 const [credentials, setCredentials] = useState({
@@ -24,7 +26,9 @@ async function handleSubmit(evt) {
     // will resolve to the user object included in the
     // payload of the JSON Web Token (JWT)
     const user = await usersService.login(credentials);
-    await setUser(user);
+    await setUser(user)
+
+
   } catch {
     setError('Log In Failed - Try Again');
   }
@@ -43,6 +47,7 @@ return (
         <label>Password</label>
         <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
         <button type="submit">LOG IN</button>
+
       </form>
     </div>
     <span className="error-message">&nbsp;{error}</span>
